@@ -2,10 +2,8 @@
 //chat functions for each level of the robot
 //begin at each end of the computer and alternate left and right for conversation
 
-//change output based on power level
-
-import processing.video.*;
-Movie theMov;
+//import processing.video.*;
+//Movie theMov;
 
 
 
@@ -14,9 +12,9 @@ Console code = new Console(10, 100, 100);
 Console info = new Console (10, 180, 24);
 //Console cbot = new Console (10, 300, 24);
 
-String[][] goodans = {{"1502"}, {"5628", "8008"}, {"2315", "8271"}, {"5239", "5739"}};
+String[][] goodans = {{"0000"}, {"1111", "2222"}, {"3333", "4444"}, {"5555", "6666"}};
                    //  shadow    laser    portal    magnet  tile     maze    testtubes
-String[][] badans = {{"1502"}, {"5628", "1488"}, {"6121", "6492"}, {"1957", "9375"}};
+String[][] badans = {{"0011"}, {"1122", "2233"}, {"3344", "4455"}, {"5566", "6677"}};
 boolean[][] progress = {{false}, {false, false}, {false, false}, {false, false}};
 int goodpower = 0;
 int badpower = 0;
@@ -30,18 +28,18 @@ void setup()
   //chat.activate();
   info.activate();
   //cbot.activate();
-  theMov = new Movie(this, "hal3.0.mp4");
-  theMov.loop();
+  //theMov = new Movie(this, "hal3.0.mp4");
+  //theMov.loop();
 }
 
 void draw()
 {
-  //background(0);
-  image(theMov, 0, 0);
-  fill(135,206,250);
+  background(0);
+  //image(theMov, 0, 0);
+  fill(0,255,0);
   noStroke();
   rect(0,480-goodpower*5,30,goodpower*5);
-  fill(255,165,0);
+  fill(255,0,0);
   noStroke();
   rect(770,480-badpower*5,30,badpower*5);
   
@@ -77,9 +75,9 @@ void draw()
   }
 }
 
-void movieEvent(Movie m) { 
-  m.read(); 
-} 
+//void movieEvent(Movie m) { 
+//  m.read(); 
+//} 
 
 void keyPressed()
 {
