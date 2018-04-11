@@ -14,12 +14,13 @@ Console code = new Console(10, 100, 100);
 Console info = new Console (10, 180, 24);
 //Console cbot = new Console (10, 300, 24);
 
-String[][] goodans = {{"1502"}, {"5628", "8008"}, {"2315", "8271"}, {"5239", "5739"}};
-                   //  shadow    laser    portal    magnet  tile     maze    testtubes
-String[][] badans = {{"1502"}, {"5628", "1488"}, {"6121", "6492"}, {"1957", "9375"}};
+String[][] goodans = {{"8008"}, {"----", "5628"}, {"2315", "8271"}, {"5239", "5739"}};
+                   //  portal    shadow    laser    magnet  tile     maze    testtubes
+String[][] badans = {{"1488"}, {"1502", "----"}, {"6121", "6492"}, {"1957", "9375"}};
 boolean[][] progress = {{false}, {false, false}, {false, false}, {false, false}};
 int goodpower = 0;
 int badpower = 0;
+String duncan = "4909125254";
 
 void setup()
 {
@@ -223,7 +224,7 @@ void checkCode(String guess)
   {
     info.reset();
     info.addString("\tYou've solved the shadow box but now you must solve my\n"
-                    + "laaser puzzle and assemble my portal gun (evil)");
+                    + "laser puzzle and assemble my portal gun (evil)");
     progress[0][0] = true;
     badpower += 10;
   } else
@@ -251,7 +252,7 @@ void checkProgress()
     info.reset();
     info.addString("\tYou've solved the shadow box puzzle and turned on the AI\n"
                     + "The next step will be to solve my laser puzzle and\n"
-                    + "assemble a portal gun");
+                    + "assemble a portal gun (hint: 451)");
   } else if (progress[0][0]==false)
   {
     info.reset();

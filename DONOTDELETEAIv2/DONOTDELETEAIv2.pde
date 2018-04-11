@@ -4,7 +4,8 @@
 
 //import processing.video.*;
 //Movie theMov;
-
+import processing.sound.*;
+SoundFile file;
 
 
 Console code = new Console(10, 100, 100);
@@ -30,6 +31,8 @@ void setup()
   //cbot.activate();
   //theMov = new Movie(this, "hal3.0.mp4");
   //theMov.loop();
+  file = new SoundFile(this, "clutchnixon.mp4");
+  file.play();
 }
 
 void draw()
